@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>女性类型测试</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-pink-50 text-gray-800 font-sans min-h-screen flex items-center justify-center p-4">
+    
+    <div id="app" class="bg-white rounded-3xl shadow-xl w-full max-w-lg overflow-hidden relative min-h-[500px] flex flex-col">
+        
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="flex flex-col items-center justify-center p-8 h-full flex-1 transition-opacity duration-500">
+            <div class="text-6xl mb-6">🌸</div>
+            <h1 class="text-3xl font-bold text-pink-500 mb-2 text-center">女性类型测试</h1>
+            <p class="text-gray-500 mb-8 text-center text-sm">30道题看透你日常佩戴的人格面具</p>
+            <button id="start-btn" class="bg-pink-400 hover:bg-pink-500 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+                开始测试
+            </button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="hidden flex-col h-full flex-1 p-6 relative">
+            <div class="flex justify-between items-center mb-6">
+                <span id="progress-text" class="text-sm font-medium text-pink-400">1 / 30</span>
+                <div class="w-full bg-pink-100 h-2 rounded-full ml-4 overflow-hidden">
+                    <div id="progress-bar" class="bg-pink-400 h-full rounded-full transition-all duration-300 w-0"></div>
+                </div>
+            </div>
+            
+            <div id="question-container" class="flex-1 flex flex-col justify-center">
+                <h2 id="question-text" class="text-xl font-medium text-gray-700 mb-6 text-center min-h-[60px]"></h2>
+                <div id="options-container" class="flex flex-col gap-3">
+                    <!-- Options will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="hidden flex-col items-center justify-center p-8 h-full flex-1 text-center">
+            <div id="result-emoji" class="text-6xl mb-4 bounce-anim"></div>
+            <h2 class="text-sm text-gray-500 mb-1">你的类型是</h2>
+            <h1 id="result-title" class="text-3xl font-bold text-pink-500 mb-4"></h1>
+            <p id="result-desc" class="text-gray-600 mb-8 leading-relaxed text-sm bg-pink-50 p-4 rounded-2xl"></p>
+            <button id="restart-btn" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-8 rounded-full transition-all">
+                重新测试
+            </button>
+        </div>
+
+    </div>
+
+    <script type="module" src="logic.js"></script>
+</body>
+</html>

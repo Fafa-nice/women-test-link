@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.option-btn {
+    background-color: #fff;
+    border: 2px solid #fce7f3;
+    color: #4b5563;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: left;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.option-btn:hover {
+    background-color: #fdf2f8;
+    border-color: #f9a8d4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(244, 114, 182, 0.1);
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceAnim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.bounce-anim {
+    animation: bounceAnim 2s infinite ease-in-out;
+}
